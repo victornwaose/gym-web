@@ -11,7 +11,7 @@ const NavBar = () => {
                     <img src={Logo} className="w-[48px]  h-12" />
                 </Link>
                 <div className="flex justify-between">
-                    <div>
+                    <div className="ml-6">
                         <Link
                             to="/"
                             style={{
@@ -23,7 +23,7 @@ const NavBar = () => {
                             Home
                         </Link>
                     </div>
-                    <div>
+                    <div className="ml-6">
                         <Link
                             to="/"
                             style={{
