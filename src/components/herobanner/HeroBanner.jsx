@@ -18,7 +18,7 @@ const HeroBanner = () => {
                     </h5>
                     <button
                         type="button"
-                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded text-sm px-5 py-1.5"
+                        className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded text-sm px-5 py-1.5"
                     >
                         Explore Exercises
                     </button>
