@@ -5,7 +5,7 @@ import Logo from "../../assets/images/download.jpg";
 
 const NavBar = () => {
     return (
-        <div className="w-[90%] ml-auto mr-auto">
+        <div className="w-[90%] ml-auto mr-auto mt-3 mb-3">
             <div className="flex justify-between">
                 <Link to="/">
                     <img src={Logo} className="w-[48px]  h-12" />
