@@ -16,7 +16,10 @@ const HeroBanner = () => {
                     <h5 className="text-black text-base mb-7">
                         checks out our most effective exercises to your fitness
                     </h5>
-                    <button className="bg-amber-700 px-4 py-2 rounded-md md:px-2 md:py-1">
+                    <button
+                        type="button"
+                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 font-medium rounded text-sm px-5 py-1.5"
+                    >
                         Explore Exercises
                     </button>
                 </div>
