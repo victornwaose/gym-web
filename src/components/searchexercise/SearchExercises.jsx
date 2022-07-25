@@ -1,12 +1,42 @@
 import React, { useEffect, useState } from "react";
 
+import { fetchData, options } from "../../utils/fetchData";
+import Slider from "../slider/Slider";
+
 const SearchExercises = () => {
     const [search, setSearch] = useState("");
+    const [exercise, setExercise] = useState([]);
+    const [bodyParts, setBodyParts] = useState([]);
+
+    useEffect(() => {
+        const fetchBodyPart = async () => {
+            const bodyPartsData = await fetchData(
+                "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
+                options
+            );
+            setBodyParts("all", ...bodyPartsData);
+        };
+        fetchBodyPart();
+    }, []);
 
     const handleSearch = async () => {
-        // // if (search) {
-        // const exercisesData = await fetchData;
-        // // }
+        if (search) {
+            const exercisesData = await fetchData(
+                "https://exercisedb.p.rapidapi.com/exercises",
+                options
+            );
+
+            const searchedExercises = exercisesData?.filter(
+                (exercise) =>
+                    exercise?.name?.toLowerCase().includes(search) ||
+                    exercise?.bodyPart?.toLowerCase().includes(search) ||
+                    exercise?.target?.toLowerCase().includes(search) ||
+                    exercise?.equipment?.toLowerCase().includes(search)
+            );
+            setSearch("");
+            setExercise(searchedExercises);
+        }
+        console.log(exercise);
     };
     return (
         <div className="w-[90%] ml-auto mr-auto mt-10 md:mt-6">
@@ -53,6 +83,9 @@ const SearchExercises = () => {
                         Search
                     </button>
                 </div>{" "}
+            </div>
+            <div>
+                <Slider data={bodyParts} />
             </div>
         </div>
     );
