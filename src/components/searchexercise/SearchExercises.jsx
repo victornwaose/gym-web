@@ -33,11 +33,15 @@ const SearchExercises = () => {
                     exercise?.target?.toLowerCase().includes(search) ||
                     exercise?.equipment?.toLowerCase().includes(search)
             );
+
             setSearch("");
             setExercise(searchedExercises);
         }
+
         console.log(exercise);
+        
     };
+
     return (
         <div className="w-[90%] ml-auto mr-auto mt-10 md:mt-6">
             <div className="w-[80%] ml-auto mr-auto md:w-[40%]">
