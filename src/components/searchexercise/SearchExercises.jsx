@@ -14,9 +14,10 @@ const SearchExercises = () => {
                 "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
                 options
             );
-            setBodyParts("all", ...bodyPartsData);
+            setBodyParts(["all", ...bodyPartsData]);
         };
         fetchBodyPart();
+        console.log(bodyParts);
     }, []);
 
     const handleSearch = async () => {
@@ -37,9 +38,6 @@ const SearchExercises = () => {
             setSearch("");
             setExercise(searchedExercises);
         }
-
-        console.log(exercise);
-        
     };
 
     return (
@@ -88,9 +86,7 @@ const SearchExercises = () => {
                     </button>
                 </div>{" "}
             </div>
-            <div>
-                <Slider data={bodyParts} />
-            </div>
+            <div>{<Slider bodyParts={bodyParts} />}</div>
         </div>
     );
 };
