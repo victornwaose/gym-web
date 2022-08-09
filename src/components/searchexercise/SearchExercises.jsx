@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import { fetchData, options } from "../../utils/fetchData";
 import Slider from "../slider/Slider";
 
-const SearchExercises = () => {
+const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
     const [search, setSearch] = useState("");
-    const [exercise, setExercise] = useState([]);
     const [bodyParts, setBodyParts] = useState([]);
 
     useEffect(() => {
@@ -17,7 +16,7 @@ const SearchExercises = () => {
             setBodyParts(["all", ...bodyPartsData]);
         };
         fetchBodyPart();
-        console.log(bodyParts);
+        console.log(bodyParts, "is all working");
     }, []);
 
     const handleSearch = async () => {
@@ -36,7 +35,7 @@ const SearchExercises = () => {
             );
 
             setSearch("");
-            setExercise(searchedExercises);
+            setExercises(searchedExercises);
         }
     };
 
@@ -86,7 +85,16 @@ const SearchExercises = () => {
                     </button>
                 </div>{" "}
             </div>
-            <div>{<Slider bodyParts={bodyParts} />}</div>
+            <div>
+                {
+                    <Slider
+                        data={bodyParts}
+                        setBodyPart={setBodyPart}
+                        bodyPart={bodyPart}
+                        setExercises={setExercises}
+                    />
+                }
+            </div>
         </div>
     );
 };

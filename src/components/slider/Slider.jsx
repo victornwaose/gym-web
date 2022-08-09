@@ -1,15 +1,20 @@
 import React from "react";
 
-const Slider = ({ bodyParts }) => {
+import BodyPart from "../bodyPart/BodyPart";
+const Slider = ({ data, bodyPart, setBodyPart }) => {
     return (
         <div>
-            {bodyParts?.map((item) => (
+            {data?.map((item) => (
                 <div
                     key={item.id || item}
                     itemId={item.id || item}
                     title={item.id || item}
                 >
-                    {item}
+                    <BodyPart
+                        item={item}
+                        setBodyPart={setBodyPart}
+                        bodyPart={bodyPart}
+                    />
                 </div>
             ))}
         </div>
