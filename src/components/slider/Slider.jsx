@@ -1,7 +1,9 @@
 import React from "react";
 
 import BodyPart from "../bodyPart/BodyPart";
+
 const Slider = ({ data, bodyPart, setBodyPart }) => {
+    console.log(bodyPart);
     return (
         <div>
             {data?.map((item) => (

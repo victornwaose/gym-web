@@ -7,7 +7,7 @@ import { ExerciseDetails, Homepage } from "./pages/index.";
 
 function App() {
     return (
-        <div className="App">
+        <div>
             <NavBar />
             <div>
                 <Routes>
@@ -17,7 +17,6 @@ function App() {
                     <Route path="/exercise/:id" element={<ExerciseDetails />} />
                 </Routes>
             </div>
-            <Footer />
         </div>
     );
 }

@@ -8,6 +8,7 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
     const [bodyParts, setBodyParts] = useState([]);
 
     useEffect(() => {
+        console.log(bodyParts);
         const fetchBodyPart = async () => {
             const bodyPartsData = await fetchData(
                 "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",
@@ -16,7 +17,6 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
             setBodyParts(["all", ...bodyPartsData]);
         };
         fetchBodyPart();
-        console.log(bodyParts, "is all working");
     }, []);
 
     const handleSearch = async () => {
@@ -53,7 +53,7 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
                         className="
         form-control
         block
-        w-[260px]
+        w-[240px]
         h-9
         px-4
         py-2
