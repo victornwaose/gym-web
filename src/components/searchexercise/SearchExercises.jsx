@@ -21,21 +21,25 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
 
     const handleSearch = async () => {
         if (search) {
-            const exercisesData = await fetchData(
-                "https://exercisedb.p.rapidapi.com/exercises",
-                options
-            );
+            try {
+                const exercisesData = await fetchData(
+                    "https://exercisedb.p.rapidapi.com/exercises",
+                    options
+                );
 
-            const searchedExercises = exercisesData?.filter(
-                (exercise) =>
-                    exercise?.name?.toLowerCase().includes(search) ||
-                    exercise?.bodyPart?.toLowerCase().includes(search) ||
-                    exercise?.target?.toLowerCase().includes(search) ||
-                    exercise?.equipment?.toLowerCase().includes(search)
-            );
+                const searchedExercises = exercisesData?.filter(
+                    (exercise) =>
+                        exercise?.name?.toLowerCase().includes(search) ||
+                        exercise?.bodyPart?.toLowerCase().includes(search) ||
+                        exercise?.target?.toLowerCase().includes(search) ||
+                        exercise?.equipment?.toLowerCase().includes(search)
+                );
 
-            setSearch("");
-            setExercises(searchedExercises);
+                setSearch("");
+                setExercises(searchedExercises);
+            } catch {
+                throw err;
+            }
         }
     };
 
@@ -53,7 +57,7 @@ const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
                         className="
         form-control
         block
-        w-[240px]
+        w-[240 px]
         h-9
         px-4
         py-2

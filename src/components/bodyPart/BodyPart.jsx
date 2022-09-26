@@ -1,7 +1,13 @@
 import React from "react";
 
-const BodyPart = ({item, setBody }) => {
-    return <div>BodyPart</div>;
+import Icon from "../../assets/icons/gym.png";
+
+const BodyPart = ({ item, setBody }) => {
+    return (
+        <div>
+            <img src={Icon} alt="dumbbell" />
+        </div>
+    );
 };
 
 export default BodyPart;
