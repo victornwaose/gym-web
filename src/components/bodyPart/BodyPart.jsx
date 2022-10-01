@@ -9,7 +9,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
             type="button"
             alignItems="center"
             justify-content="center"
-            className="bodyPart-card mt-5"
+            className="bodyPart-card mt-5 w-[80%] ml-auto mr-auto"
             sx={{
                 borderTop: bodyPart === item ? "4px solid #ff2625" : "",
                 backgroundColor: "#fff",

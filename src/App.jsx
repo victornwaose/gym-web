@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { Box } from "@mui/material";
 
 import "./App.css";
 import { Footer, NavBar } from "./components";
@@ -7,7 +8,7 @@ import { ExerciseDetails, Homepage } from "./pages/index.";
 
 function App() {
     return (
-        <div>
+        <Box>
             <NavBar />
             <div>
                 <Routes>
@@ -17,7 +18,7 @@ function App() {
                     <Route path="/exercise/:id" element={<ExerciseDetails />} />
                 </Routes>
             </div>
-        </div>
+        </Box>
     );
 }
 
