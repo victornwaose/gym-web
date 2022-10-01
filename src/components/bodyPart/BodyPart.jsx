@@ -1,35 +1,31 @@
 import React from "react";
+import { Stack } from "@mui/system";
 
 import Icon from "../../assets/icons/gym.png";
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
     return (
-        <div
-            className={`flex justify-center cursor-pointer mt-8 align-center, ${
-                bodyPart === item
-                    ? {
-                          borderTop: "4px solid #ff2625",
-                          backgroundColor: "#fff",
-                          borderBottomLeftRadius: "20px",
-                          width: "270px",
-                          height: "280px",
-                          gap: "20px",
-                      }
-                    : {
-                          background: "#fff",
-                          borderBottomLeftRadius: "20px",
-                          width: "270px",
-                          height: "280px",
-                          gap: "20px",
-                      }
-            }`}
+        <Stack
+            type="button"
+            alignItems="center"
+            justify-content="center"
+            className="bodyPart-card mt-5"
+            sx={{
+                borderTop: bodyPart === item ? "4px solid #ff2625" : "",
+                backgroundColor: "#fff",
+                borderBottomLeftRadius: "20px",
+                width: "270px",
+                height: "28px",
+                cursor: "pointer",
+                gap: "47px",
+            }}
         >
             <img
                 src={Icon}
                 alt="dumbbell"
-                style={{ width: "40px", height: "40px" }}
+                style={{ width: "80px", height: "40px" }}
             />
-        </div>
+        </Stack>
     );
 };
 
