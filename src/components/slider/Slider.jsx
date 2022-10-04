@@ -11,45 +11,42 @@ const Slider = ({ data, bodyPart, setBodyPart }) => {
         const { scrollPrev } = React.useContext(VisibilityContext);
 
         return (
-            <Arrow disabled={isFirstItemVisible} onClick={() => scrollPrev()}>
-                <img src={Left} alt="leftArrow" />
-            </Arrow>
+            <h1 onClick={() => scrollPrev()}>
+                <img src={Left} className="text-lg" alt="leftArrow" />
+            </h1>
         );
     };
 
     const RightArrow = () => {
-        const { isLastItemVisible, scrollNext } =
-            React.useContext(VisibilityContext);
+        const { scrollNext } = React.useContext(VisibilityContext);
 
         return (
-            <Arrow disabled={isLastItemVisible} onClick={() => scrollNext()}>
-                <img src={Right} alt="leftArrow" />
-            </Arrow>
+            <h1 onClick={() => scrollNext()}>
+                <img src={Right} className="text-lg" alt="leftArrow" />
+            </h1>
         );
     };
 
     console.log(bodyPart);
 
     return (
-        <ScrollMenu
-            className=" w-[80%] ml-auto mr-auto"
-            RightArrow={Right}
-            LeftArrow={Left}
-        >
+        <ScrollMenu RightArrow={RightArrow} LeftArrow={LeftArrow} ss>
             {data?.map((item) => (
-                <Box
-                    width="400px"
+                <div
+                    className="w-[80%] ml-auto mr-auto"
                     key={item.id || item}
                     itemId={item.id || item}
                     title={item.id || item}
-                    m="0 40px"
+                    m="0 20px"
                 >
-                    <BodyPart
-                        item={item}
-                        setBodyPart={setBodyPart}
-                        bodyPart={bodyPart}
-                    />
-                </Box>
+                    <div className="w-[80%] ml-auto mr-auto">
+                        <BodyPart
+                            item={item}
+                            setBodyPart={setBodyPart}
+                            bodyPart={bodyPart}
+                        />
+                    </div>
+                </div>
             ))}
         </ScrollMenu>
     );

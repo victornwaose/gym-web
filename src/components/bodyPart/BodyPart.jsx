@@ -16,25 +16,22 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
                 borderTop: bodyPart === item ? "4px solid #ff2625" : "",
                 backgroundColor: "#fff",
                 borderBottomLeftRadius: "20px",
-                width: "170px",
-                height: "58px",
+                width: "100px",
+                height: "100px",
                 cursor: "pointer",
                 gap: "17px",
+            }}
+            onClick={() => {
+                setBodyPart(item);
+                window.scrollTo({ top: 1500, left: 100, behavior: "smooth" });
             }}
         >
             <img
                 src={Icon}
                 alt="dumbbell"
-                style={{ width: "80px", height: "40px" }}
+                style={{ width: "30px", height: "30px", marginTop: "10px" }}
             />
-            <h1
-                fontSize="24px"
-                fontWeight="bold"
-                textTransform="upperCase"
-                color="black"
-            >
-                {item}
-            </h1>
+            <h1 className="text-sm font-bold text-black capitalize">{item}</h1>
         </Stack>
     );
 };
