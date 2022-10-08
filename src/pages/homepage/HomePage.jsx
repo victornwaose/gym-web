@@ -1,13 +1,15 @@
 import React from "react";
 
 import { Exercises, HeroBanner, SearchExercises } from "../../components";
+import { Box, Stack, Typography } from "@mui/material";
 
 const HomePage = () => {
     const [exercises, setExercises] = React.useState([]);
     const [bodyPart, setBodyPart] = React.useState("all");
+    console.log(exercises, "exercises");
 
     return (
-        <div className="w-[90%] ml-auto mr-auto">
+        <Box sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
             <HeroBanner />
             <SearchExercises
                 setBodyPart={setBodyPart}
@@ -18,8 +20,9 @@ const HomePage = () => {
                 setBodyPart={setBodyPart}
                 bodyPart={bodyPart}
                 setExercises={setExercises}
+                exercises={exercises}
             />
-        </div>
+        </Box>
     );
 };
 

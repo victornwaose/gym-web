@@ -6,9 +6,7 @@ import Slider from "../slider/Slider";
 const SearchExercises = ({ setExercises, setBodyPart, bodyPart }) => {
     const [search, setSearch] = useState("");
     const [bodyParts, setBodyParts] = useState([]);
-
     useEffect(() => {
-        console.log(bodyParts);
         const fetchBodyPart = async () => {
             const bodyPartsData = await fetchData(
                 "https://exercisedb.p.rapidapi.com/exercises/bodyPartList",

@@ -5,3 +5,4 @@ export { default as SearchExercises } from "./searchexercise/SearchExercises";
 export { default as Exercises } from "./execrises/Exercises";
 export { default as Slider } from "./slider/Slider";
 export { default as BodyPart } from "./bodyPart/BodyPart";
+export { default as ExerciseCard } from "./exerciseCard/ExerciseCard";
